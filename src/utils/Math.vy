@@ -1,4 +1,3 @@
-# pragma version ^0.3.10
 """
 @title Standard Mathematical Utility Functions
 @custom:contract-name Math
@@ -25,18 +24,6 @@
         - `_log_2` (`internal` `pure` function),
         - `_wad_cbrt` (`internal` `pure` function).
 """
-
-
-@external
-@payable
-def __init__():
-    """
-    @dev To omit the opcodes for checking the `msg.value`
-         in the creation-time EVM bytecode, the constructor
-         is declared as `payable`.
-    """
-    pass
-
 
 @external
 @pure
