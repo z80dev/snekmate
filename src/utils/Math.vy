@@ -25,7 +25,7 @@
         - `_wad_cbrt` (`internal` `pure` function).
 """
 
-@external
+@internal
 @pure
 def uint256_average(x: uint256, y: uint256) -> uint256:
     """
@@ -42,7 +42,7 @@ def uint256_average(x: uint256, y: uint256) -> uint256:
     return unsafe_add(x & y, (x ^ y) >> 1)
 
 
-@external
+@internal
 @pure
 def int256_average(x: int256, y: int256) -> int256:
     """
@@ -59,7 +59,7 @@ def int256_average(x: int256, y: int256) -> int256:
     return unsafe_add(unsafe_add(x >> 1, y >> 1), x & y & 1)
 
 
-@external
+@internal
 @pure
 def ceil_div(x: uint256, y: uint256) -> uint256:
     """
@@ -77,7 +77,7 @@ def ceil_div(x: uint256, y: uint256) -> uint256:
     return 0 if (x == empty(uint256)) else unsafe_add(unsafe_div(x - 1, y), 1)
 
 
-@external
+@internal
 @pure
 def signum(x: int256) -> int256:
     """
@@ -92,7 +92,7 @@ def signum(x: int256) -> int256:
     return unsafe_sub(convert((x > 0), int256), convert((x < 0), int256))
 
 
-@external
+@internal
 @pure
 def mul_div(x: uint256, y: uint256, denominator: uint256, roundup: bool) -> uint256:
     """
@@ -211,7 +211,7 @@ def mul_div(x: uint256, y: uint256, denominator: uint256, roundup: bool) -> uint
     return result
 
 
-@external
+@internal
 @pure
 def log_2(x: uint256, roundup: bool) -> uint256:
     """
@@ -233,7 +233,7 @@ def log_2(x: uint256, roundup: bool) -> uint256:
     return self._log_2(x, roundup)
 
 
-@external
+@internal
 @pure
 def log_10(x: uint256, roundup: bool) -> uint256:
     """
@@ -284,7 +284,7 @@ def log_10(x: uint256, roundup: bool) -> uint256:
     return result
 
 
-@external
+@internal
 @pure
 def log_256(x: uint256, roundup: bool) -> uint256:
     """
@@ -331,7 +331,7 @@ def log_256(x: uint256, roundup: bool) -> uint256:
     return result
 
 
-@external
+@internal
 @pure
 def wad_ln(x: int256) -> int256:
     """
@@ -404,7 +404,7 @@ def wad_ln(x: int256) -> int256:
            600_920_179_829_731_861_736_702_779_321_621_459_595_472_258_049_074_101_567_377_883_020_018_308) >> 174
 
 
-@external
+@internal
 @pure
 def wad_exp(x: int256) -> int256:
     """
@@ -472,7 +472,7 @@ def wad_exp(x: int256) -> int256:
            convert(unsafe_sub(195, k), uint256), int256)
 
 
-@external
+@internal
 @pure
 def cbrt(x: uint256, roundup: bool) -> uint256:
     """
@@ -499,7 +499,7 @@ def cbrt(x: uint256, roundup: bool) -> uint256:
     return y
 
 
-@external
+@internal
 @pure
 def wad_cbrt(x: uint256) -> uint256:
     """
